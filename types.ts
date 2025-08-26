@@ -200,6 +200,5 @@ export interface InstallPrompt {
 // Export collections for easier imports
 export type {
   DatabaseSchema as DB,
-  ChecklistItemTemplate as ChecklistTemplate,
   PhotoMetadata as ImageMetadata,
 };

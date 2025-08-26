@@ -33,7 +33,7 @@ const DEFAULT_PDF_OPTIONS: Required<PDFGenerationOptions> = {
  */
 export async function generatePDFReport(
   data: InspectionReportData,
-  options: PDFGenerationOptions = {}
+  options: Partial<PDFGenerationOptions> = {}
 ): Promise<Blob> {
   const opts = { ...DEFAULT_PDF_OPTIONS, ...options };
   

@@ -32,21 +32,21 @@ export class DepositDefenderDB extends Dexie {
     });
 
     // Define hooks for automatic timestamp updates
-    this.properties.hook('creating', function (primKey, obj, trans) {
+    this.properties.hook('creating', function (primKey, obj: Property, trans) {
       obj.createdAt = new Date();
       obj.updatedAt = new Date();
     });
 
-    this.properties.hook('updating', function (modifications, primKey, obj, trans) {
+    this.properties.hook('updating', function (modifications: Partial<Property>, primKey, obj: Property, trans) {
       modifications.updatedAt = new Date();
     });
 
-    this.inspections.hook('creating', function (primKey, obj, trans) {
+    this.inspections.hook('creating', function (primKey, obj: Inspection, trans) {
       obj.createdAt = new Date();
       obj.updatedAt = new Date();
     });
 
-    this.inspections.hook('updating', function (modifications, primKey, obj, trans) {
+    this.inspections.hook('updating', function (modifications: Partial<Inspection>, primKey, obj: Inspection, trans) {
       modifications.updatedAt = new Date();
     });
   }
