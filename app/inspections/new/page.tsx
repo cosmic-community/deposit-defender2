@@ -264,7 +264,7 @@ export default function NewInspectionPage() {
                             type="text"
                             className="input w-full"
                             placeholder={`e.g., Master ${getRoomTypeDisplayName(roomType)}, Guest ${getRoomTypeDisplayName(roomType)}`}
-                            value={selectedRoom?.name || ''}
+                            value={selectedRoom ? selectedRoom.name : ''}
                             onChange={(e) => handleRoomNameChange(roomType, e.target.value)}
                           />
                         </div>
